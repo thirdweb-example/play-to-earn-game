@@ -25,7 +25,7 @@ export default function ApproxRewards({ miningContract }: Props) {
 
   const [amount, setAmount] = useState<number>(0);
 
-  const [multiplier, setMultiplier] = useState<number>(1);
+  const [multiplier, setMultiplier] = useState<number>(0);
 
   useEffect(() => {
     (async () => {
@@ -36,7 +36,11 @@ export default function ApproxRewards({ miningContract }: Props) {
         address
       )) as ContractMappingResponse;
 
-      setMultiplier(p.value.toNumber() + 1);
+      if (p.isData) {
+        setMultiplier(p.value.toNumber() + 1);
+      } else {
+        setMultiplier(0);
+      }
     })();
   }, [address, miningContract]);
 
