@@ -26,8 +26,13 @@ const Home: NextPage = () => {
   // 0. Wallet Connect - required to check if they own an NFT
   if (!address) {
     return (
-      <div>
-        <button onClick={connectWithMetamask}>Connect Wallet</button>
+      <div className={styles.container}>
+        <button
+          className={`${styles.mainButton} ${styles.spacerBottom}`}
+          onClick={connectWithMetamask}
+        >
+          Connect Wallet
+        </button>
       </div>
     );
   }
