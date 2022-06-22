@@ -434,3 +434,19 @@
 .noGapTop {
   margin-top: 0px;
 }
+
+.mainSection {
+  width: 100%;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* On mobile */
+@media screen and (max-width: 1000px) {
+  .mainSection {
+    flex-direction: column;
+  }
+}

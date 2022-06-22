@@ -43,16 +43,7 @@ export default function Play() {
       characterContract &&
       tokenContract &&
       pickaxeContract ? (
-        <div
-          style={{
-            width: "100%",
-            minHeight: "20rem",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-around",
-            alignItems: "center",
-          }}
-        >
+        <div className={styles.mainSection}>
           <CurrentGear
             miningContract={miningContract}
             characterContract={characterContract}
