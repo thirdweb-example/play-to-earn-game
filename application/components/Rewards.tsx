@@ -68,7 +68,7 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
         <b>{unclaimedAmount && ethers.utils.formatUnits(unclaimedAmount)}</b>
       </p>
 
-      <ApproxRewards />
+      <ApproxRewards miningContract={miningContract} />
 
       <button
         onClick={() => claim()}

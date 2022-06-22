@@ -7,8 +7,9 @@ import "@thirdweb-dev/contracts/token/TokenERC20.sol"; // For my ERC-20 Token co
 
 // OpenZeppelin (ReentrancyGuard)
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
+import "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Holder.sol";
 
-contract Mining is ReentrancyGuard {
+contract Mining is ReentrancyGuard, ERC1155Holder {
     // Store our two other contracts here (Edition Drop and Token)
     DropERC1155 public immutable pickaxeNftCollection;
     TokenERC20 public immutable rewardsToken;

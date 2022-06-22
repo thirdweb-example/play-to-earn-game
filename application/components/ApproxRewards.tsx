@@ -1,7 +1,12 @@
+import { useAddress } from "@thirdweb-dev/react";
+import { SmartContract } from "@thirdweb-dev/sdk";
 import { ethers } from "ethers";
 import React, { useEffect, useState } from "react";
+import ContractMappingResponse from "../types/ContractMappingResponse";
 
-type Props = {};
+type Props = {
+  miningContract: SmartContract<any>;
+};
 
 // This component gives a very rough estimation of how many tokens have been earned in the current session
 // Assuming there is a block every 2.1 seconds on Polygon, and the rewards of gwei is 20_000_000 per block
@@ -9,7 +14,9 @@ type Props = {};
 // 20_000_000 * 2.1 * blocks_in_session
 // This is a rough estimation of how many tokens have been earned in the current session
 
-export default function ApproxRewards({}: Props) {
+export default function ApproxRewards({ miningContract }: Props) {
+  const address = useAddress();
+
   // We can kick off a timer when this component is mounted
   // Each 2.1 seconds, we can update the amount of tokens earned
   // This is a rough estimation of how many tokens have been earned in the current session
@@ -17,6 +24,21 @@ export default function ApproxRewards({}: Props) {
   const everyMillisecondAmount = parseInt((20000000 / 2.1).toFixed(0));
 
   const [amount, setAmount] = useState<number>(0);
+
+  const [multiplier, setMultiplier] = useState<number>(1);
+
+  useEffect(() => {
+    (async () => {
+      if (!address) return;
+
+      const p = (await miningContract.call(
+        "playerPickaxe",
+        address
+      )) as ContractMappingResponse;
+
+      setMultiplier(p.value.toNumber() + 1);
+    })();
+  }, [address, miningContract]);
 
   useEffect(() => {
     // set interval counter
@@ -30,7 +52,8 @@ export default function ApproxRewards({}: Props) {
 
   return (
     <p style={{ width: 370, overflow: "hidden" }}>
-      Earned this session: <b>{ethers.utils.formatEther(amount)}</b>
+      Earned this session:{" "}
+      <b>{ethers.utils.formatEther(amount * multiplier)}</b>
     </p>
   );
 }

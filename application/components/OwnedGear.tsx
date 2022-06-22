@@ -44,7 +44,12 @@ export default function OwnedGear({ pickaxeContract, miningContract }: Props) {
       await pickaxeContract.setApprovalForAll(MINING_CONTRACT_ADDRESS, true);
     }
 
-    await miningContract.call("stake", id);
+    try {
+      await miningContract.call("stake", id);
+    } catch (e) {
+      console.error(e);
+      alert("Something went wrong. Please refresh the page and try again.");
+    }
   }
 
   return (
