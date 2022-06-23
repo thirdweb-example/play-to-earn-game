@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "../styles/Gameplay.module.css";
+import EditionDropMetadata from "../types/EditionDropMetadata";
 
 const GoldGem = (
   <div className={styles.slide}>
@@ -7,7 +8,15 @@ const GoldGem = (
   </div>
 );
 
-export default function GameplayAnimation() {
+type Props = {
+  pickaxe: EditionDropMetadata | undefined;
+};
+
+export default function GameplayAnimation({ pickaxe }: Props) {
+  if (!pickaxe) {
+    return <div style={{ marginLeft: 8 }}>I need a pickaxe!</div>;
+  }
+
   return (
     <div className={styles.slider}>
       <div className={styles.slideTrack}>

@@ -44,12 +44,10 @@ export default function OwnedGear({ pickaxeContract, miningContract }: Props) {
       await pickaxeContract.setApprovalForAll(MINING_CONTRACT_ADDRESS, true);
     }
 
-    try {
-      await miningContract.call("stake", id);
-    } catch (e) {
-      console.error(e);
-      alert("Something went wrong. Please refresh the page and try again.");
-    }
+    await miningContract.call("stake", id);
+
+    // Refresh the page
+    window.location.reload();
   }
 
   return (
@@ -59,12 +57,10 @@ export default function OwnedGear({ pickaxeContract, miningContract }: Props) {
           <div className={styles.nftBox} key={p.metadata.id.toString()}>
             <ThirdwebNftMedia
               metadata={p.metadata}
-              className={styles.nftMedia}
+              className={`${styles.nftMedia} ${styles.spacerTop}`}
               height={"64"}
             />
             <h3>{p.metadata.name}</h3>
-            {/* @ts-ignore */}
-            <p>Quantity: {p.supply.toNumber()}</p>
 
             <button
               onClick={() => equip(p.metadata.id)}

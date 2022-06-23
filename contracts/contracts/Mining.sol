@@ -108,10 +108,10 @@ contract Mining is ReentrancyGuard, ERC1155Holder {
         }
 
         // Calculate the time difference between now and the last time they staked/withdrew/claimed their rewards
-        uint256 timeDifference = block.timestamp - (playerLastUpdate[_player].value + 1);
+        uint256 timeDifference = block.timestamp - playerLastUpdate[_player].value;
 
-        // Calculate the rewards they are owed (rate is 20,000,000 gwei per block)
-        uint256 rewards = timeDifference * 20000000;
+        // Calculate the rewards they are owed
+        uint256 rewards = timeDifference * 10_000_000_000_000 * (playerPickaxe[_player].value + 1);
 
         // Return the rewards
         return rewards;

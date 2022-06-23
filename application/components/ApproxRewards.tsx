@@ -11,7 +11,7 @@ type Props = {
 // This component gives a very rough estimation of how many tokens have been earned in the current session
 // Assuming there is a block every 2.1 seconds on Polygon, and the rewards of gwei is 20_000_000 per block
 // The total amount of tokens earned is:
-// 20_000_000 * 2.1 * blocks_in_session
+// 10_000_000_000_000 * 2.1 * blocks_in_session
 // This is a rough estimation of how many tokens have been earned in the current session
 
 export default function ApproxRewards({ miningContract }: Props) {
@@ -21,7 +21,9 @@ export default function ApproxRewards({ miningContract }: Props) {
   // Each 2.1 seconds, we can update the amount of tokens earned
   // This is a rough estimation of how many tokens have been earned in the current session
 
-  const everyMillisecondAmount = parseInt((20000000 / 2.1).toFixed(0));
+  const everyMillisecondAmount = parseInt(
+    (10_000_000_000_000 / 2.1).toFixed(0)
+  );
 
   const [amount, setAmount] = useState<number>(0);
 
@@ -57,7 +59,10 @@ export default function ApproxRewards({ miningContract }: Props) {
   return (
     <p style={{ width: 370, overflow: "hidden" }}>
       Earned this session:{" "}
-      <b>{ethers.utils.formatEther(amount * multiplier)}</b>
+      <b>
+        {ethers.utils.formatEther((amount * multiplier).toFixed(0)) ||
+          "Error..."}
+      </b>
     </p>
   );
 }

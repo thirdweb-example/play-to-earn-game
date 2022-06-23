@@ -15,15 +15,6 @@ type Props = {
 export default function Shop({ pickaxeContract }: Props) {
   const { data: availablePickaxes } = useNFTs(pickaxeContract);
 
-  useEffect(() => {
-    (async () => {
-      const x = await pickaxeContract.getAll();
-      console.log(x);
-    })();
-  }, [pickaxeContract]);
-
-  console.log("AvailablePickaxes", availablePickaxes);
-
   return (
     <>
       <div className={styles.nftBoxGrid}>
