@@ -1,9 +1,9 @@
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import {
+  ConnectWallet,
   useAddress,
-  useEditionDrop,
-  useMetamask,
+  useContract,
   useOwnedNFTs,
 } from "@thirdweb-dev/react";
 import { CHARACTER_EDITION_ADDRESS } from "../const/contractAddresses";
@@ -11,9 +11,11 @@ import MintContainer from "../components/MintContainer";
 import { useRouter } from "next/router";
 
 const Home: NextPage = () => {
-  const editionDrop = useEditionDrop(CHARACTER_EDITION_ADDRESS);
+  const { contract: editionDrop } = useContract(
+    CHARACTER_EDITION_ADDRESS,
+    "edition-drop"
+  );
 
-  const connectWithMetamask = useMetamask();
   const address = useAddress();
   const router = useRouter();
 
@@ -27,12 +29,7 @@ const Home: NextPage = () => {
   if (!address) {
     return (
       <div className={styles.container}>
-        <button
-          className={`${styles.mainButton} ${styles.spacerBottom}`}
-          onClick={connectWithMetamask}
-        >
-          Connect Wallet
-        </button>
+        <ConnectWallet colorMode="dark" />
       </div>
     );
   }

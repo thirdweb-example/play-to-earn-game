@@ -1,9 +1,8 @@
 import {
+  ConnectWallet,
   useAddress,
   useContract,
-  useEditionDrop,
   useMetamask,
-  useToken,
 } from "@thirdweb-dev/react";
 import React from "react";
 import CurrentGear from "../components/CurrentGear";
@@ -21,18 +20,22 @@ import styles from "../styles/Home.module.css";
 
 export default function Play() {
   const address = useAddress();
-  const connectWithMetamask = useMetamask();
+
   const { contract: miningContract } = useContract(MINING_CONTRACT_ADDRESS);
-  const characterContract = useEditionDrop(CHARACTER_EDITION_ADDRESS);
-  const pickaxeContract = useEditionDrop(PICKAXE_EDITION_ADDRESS);
-  const tokenContract = useToken(GOLD_GEMS_ADDRESS);
+  const { contract: characterContract } = useContract(
+    CHARACTER_EDITION_ADDRESS,
+    "edition-drop"
+  );
+  const { contract: pickaxeContract } = useContract(
+    PICKAXE_EDITION_ADDRESS,
+    "edition-drop"
+  );
+  const { contract: tokenContract } = useContract(GOLD_GEMS_ADDRESS, "token");
 
   if (!address) {
     return (
       <div className={styles.container}>
-        <button className={styles.mainButton} onClick={connectWithMetamask}>
-          Connect Wallet
-        </button>
+        <ConnectWallet colorMode="dark" />
       </div>
     );
   }

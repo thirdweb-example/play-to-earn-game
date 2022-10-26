@@ -1,8 +1,7 @@
 import { ThirdwebNftMedia, useAddress, useNFT } from "@thirdweb-dev/react";
-import { EditionDrop, SmartContract } from "@thirdweb-dev/sdk";
+import { EditionDrop, NFT, SmartContract } from "@thirdweb-dev/sdk";
 import React, { useEffect, useState } from "react";
 import ContractMappingResponse from "../types/ContractMappingResponse";
-import EditionDropMetadata from "../types/EditionDropMetadata";
 import GameplayAnimation from "./GameplayAnimation";
 import styles from "../styles/Home.module.css";
 
@@ -25,7 +24,7 @@ export default function CurrentGear({
   const address = useAddress();
 
   const { data: playerNft } = useNFT(characterContract, 0);
-  const [pickaxe, setPickaxe] = useState<EditionDropMetadata>();
+  const [pickaxe, setPickaxe] = useState<NFT>();
 
   useEffect(() => {
     (async () => {

@@ -2,12 +2,12 @@ import {
   ThirdwebNftMedia,
   useAddress,
   useOwnedNFTs,
+  Web3Button,
 } from "@thirdweb-dev/react";
 import { EditionDrop, SmartContract } from "@thirdweb-dev/sdk";
 import React from "react";
 import LoadingSection from "./LoadingSection";
 import styles from "../styles/Home.module.css";
-import { BigNumber } from "ethers";
 import { MINING_CONTRACT_ADDRESS } from "../const/contractAddresses";
 
 type Props = {
@@ -31,7 +31,7 @@ export default function OwnedGear({ pickaxeContract, miningContract }: Props) {
     return <LoadingSection />;
   }
 
-  async function equip(id: BigNumber) {
+  async function equip(id: string) {
     if (!address) return;
 
     // The contract requires approval to be able to transfer the pickaxe
@@ -62,12 +62,15 @@ export default function OwnedGear({ pickaxeContract, miningContract }: Props) {
             />
             <h3>{p.metadata.name}</h3>
 
-            <button
-              onClick={() => equip(p.metadata.id)}
-              className={`${styles.mainButton} ${styles.spacerBottom}`}
-            >
-              Equip
-            </button>
+            <div className={styles.smallMargin}>
+              <Web3Button
+                colorMode="dark"
+                contractAddress={MINING_CONTRACT_ADDRESS}
+                action={() => equip(p.metadata.id)}
+              >
+                Equip
+              </Web3Button>
+            </div>
           </div>
         ))}
       </div>

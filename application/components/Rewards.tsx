@@ -1,15 +1,18 @@
+import React from "react";
 import {
   ThirdwebNftMedia,
   useAddress,
+  useContractRead,
   useMetadata,
   useTokenBalance,
+  Web3Button,
 } from "@thirdweb-dev/react";
 import { SmartContract, Token } from "@thirdweb-dev/sdk";
-import { BigNumber, ethers } from "ethers";
-import React, { useEffect, useState } from "react";
+import { ethers } from "ethers";
 
 import styles from "../styles/Home.module.css";
 import ApproxRewards from "./ApproxRewards";
+import { MINING_CONTRACT_ADDRESS } from "../const/contractAddresses";
 
 type Props = {
   miningContract: SmartContract<any>;
@@ -27,23 +30,11 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
 
   const { data: tokenMetadata } = useMetadata(tokenContract);
   const { data: currentBalance } = useTokenBalance(tokenContract, address);
-
-  const [unclaimedAmount, setUnclaimedAmount] = useState<BigNumber>();
-
-  useEffect(() => {
-    (async () => {
-      if (!address) return;
-
-      const u = await miningContract.call("calculateRewards", address);
-      setUnclaimedAmount(u);
-    })();
-  }, [address, miningContract]);
-
-  async function claim() {
-    if (!address) return;
-
-    await miningContract.call("claim");
-  }
+  const { data: unclaimedAmount } = useContractRead(
+    miningContract,
+    "calculateRewards",
+    address
+  );
 
   return (
     <div
@@ -70,12 +61,14 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
 
       <ApproxRewards miningContract={miningContract} />
 
-      <button
-        onClick={() => claim()}
-        className={`${styles.mainButton} ${styles.spacerBottom}`}
-      >
-        Claim
-      </button>
+      <div className={styles.smallMargin}>
+        <Web3Button
+          contractAddress={MINING_CONTRACT_ADDRESS}
+          action={(contract) => contract.call("claim")}
+        >
+          Claim
+        </Web3Button>
+      </div>
     </div>
   );
 }

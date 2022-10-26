@@ -1,6 +1,6 @@
+import { NFT } from "@thirdweb-dev/sdk";
 import React from "react";
 import styles from "../styles/Gameplay.module.css";
-import EditionDropMetadata from "../types/EditionDropMetadata";
 
 const GoldGem = (
   <div className={styles.slide}>
@@ -9,7 +9,7 @@ const GoldGem = (
 );
 
 type Props = {
-  pickaxe: EditionDropMetadata | undefined;
+  pickaxe: NFT | undefined;
 };
 
 export default function GameplayAnimation({ pickaxe }: Props) {

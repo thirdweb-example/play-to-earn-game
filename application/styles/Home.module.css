@@ -4,6 +4,10 @@
   left: 5%;
 }
 
+.smallMargin {
+  margin: 4px;
+}
+
 .btn {
   background-color: var(--tw-color1);
   outline: none;

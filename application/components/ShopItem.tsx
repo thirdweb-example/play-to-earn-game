@@ -1,46 +1,24 @@
 import {
-  NFT,
   ThirdwebNftMedia,
   useActiveClaimCondition,
-  useAddress,
-  useClaimNFT,
+  Web3Button,
 } from "@thirdweb-dev/react";
-import { EditionDrop } from "@thirdweb-dev/sdk";
-import { BigNumber, ethers } from "ethers";
+import { EditionDrop, NFT } from "@thirdweb-dev/sdk";
+import { ethers } from "ethers";
 import React from "react";
+import { PICKAXE_EDITION_ADDRESS } from "../const/contractAddresses";
 import styles from "../styles/Home.module.css";
 
 type Props = {
   pickaxeContract: EditionDrop;
-  item: NFT<EditionDrop>;
+  item: NFT;
 };
 
 export default function ShopItem({ item, pickaxeContract }: Props) {
-  const address = useAddress();
-
   const { data: claimCondition } = useActiveClaimCondition(
     pickaxeContract,
     item.metadata.id
   );
-
-  const { mutate: claimNft } = useClaimNFT(pickaxeContract);
-
-  console.log(claimCondition);
-
-  async function buy(id: BigNumber) {
-    if (!address) return;
-
-    try {
-      claimNft({
-        to: address,
-        tokenId: id,
-        quantity: 1,
-      });
-    } catch (e) {
-      console.error(e);
-      alert("Something went wrong. Are you sure you have enough tokens?");
-    }
-  }
 
   return (
     <div className={styles.nftBox} key={item.metadata.id.toString()}>
@@ -58,12 +36,17 @@ export default function ShopItem({ item, pickaxeContract }: Props) {
         </b>
       </p>
 
-      <button
-        onClick={() => buy(item.metadata.id)}
-        className={`${styles.mainButton} ${styles.spacerBottom}`}
-      >
-        Buy
-      </button>
+      <div className={styles.smallMargin}>
+        <Web3Button
+          colorMode="dark"
+          contractAddress={PICKAXE_EDITION_ADDRESS}
+          action={(contract) => contract.erc1155.claim(item.metadata.id, 1)}
+          onSuccess={() => alert("Purchased!")}
+          onError={(error) => alert(error)}
+        >
+          Buy
+        </Web3Button>
+      </div>
     </div>
   );
 }

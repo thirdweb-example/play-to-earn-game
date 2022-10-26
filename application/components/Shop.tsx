@@ -1,6 +1,6 @@
-import { ThirdwebNftMedia, useNFTs } from "@thirdweb-dev/react";
+import { useNFTs } from "@thirdweb-dev/react";
 import { EditionDrop } from "@thirdweb-dev/sdk";
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "../styles/Home.module.css";
 import ShopItem from "./ShopItem";
 
