@@ -1,10 +1,12 @@
-import "../styles/globals.css";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
 import type { AppProps } from "next/app";
-import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const activeChain = "mumbai";
+
   return (
-    <ThirdwebProvider desiredChainId={ChainId.Mumbai}>
+    <ThirdwebProvider activeChain={activeChain}>
       <Component {...pageProps} />
     </ThirdwebProvider>
   );

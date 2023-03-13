@@ -11,17 +11,17 @@
   "dependencies": {
     "@thirdweb-dev/react": "^3",
     "@thirdweb-dev/sdk": "^3",
-    "ethers": "^5.6.9",
-    "next": "12.1.6",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "ethers": "^5",
+    "next": "^13",
+    "react": "^18.2",
+    "react-dom": "^18.2"
   },
   "devDependencies": {
-    "@types/node": "18.0.0",
-    "@types/react": "18.0.14",
-    "@types/react-dom": "18.0.5",
-    "eslint": "8.18.0",
-    "eslint-config-next": "12.1.6",
-    "typescript": "4.7.4"
+    "@types/node": "18.15.1",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.36.0",
+    "eslint-config-next": "^13",
+    "typescript": "4.9.5"
   }
 }
