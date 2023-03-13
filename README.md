@@ -199,7 +199,7 @@ To allow users to interact with our contracts and make transactions, we need to 
 ```tsx
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider desiredChainId={ChainId.Mumbai}>
+    <ThirdwebProvider activeChain="mumbai">
       <Component {...pageProps} />
     </ThirdwebProvider>
   );
