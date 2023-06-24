@@ -35,7 +35,7 @@ export default function Play() {
   if (!address) {
     return (
       <div className={styles.container}>
-        <ConnectWallet colorMode="dark" />
+        <ConnectWallet theme="dark" />
       </div>
     );
   }

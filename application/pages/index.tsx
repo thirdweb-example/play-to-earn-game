@@ -29,7 +29,7 @@ const Home: NextPage = () => {
   if (!address) {
     return (
       <div className={styles.container}>
-        <ConnectWallet colorMode="dark" />
+        <ConnectWallet theme="dark" />
       </div>
     );
   }
@@ -58,7 +58,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <button
         className={`${styles.mainButton} ${styles.spacerBottom}`}
-        onClick={() => router.push(`/play`)}
+        onClick={() => router.push("/play")}
       >
         Play Game
       </button>

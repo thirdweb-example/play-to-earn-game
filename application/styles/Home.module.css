@@ -283,8 +283,7 @@
   min-height: 200px;
 }
 
-/* Between 1200 and 800 */
-@media only screen and (min-width: 800px) and (max-width: 1200px) {
+@media only screen and (min-width: 800px) {
   .nftBox {
     width: 49%;
     margin-top: 16px;
