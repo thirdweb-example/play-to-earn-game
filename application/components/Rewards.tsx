@@ -33,7 +33,7 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
   const { data: unclaimedAmount } = useContractRead(
     miningContract,
     "calculateRewards",
-    address
+    [address]
   );
 
   return (
@@ -44,13 +44,13 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
         Your <b>Gold Gems</b>
       </p>
 
-      {tokenMetadata && (
+      {tokenMetadata ? (
         <ThirdwebNftMedia
           // @ts-ignore
           metadata={tokenMetadata}
           height={"48"}
         />
-      )}
+      ) : null}
       <p className={styles.noGapBottom}>
         Balance: <b>{currentBalance?.displayValue}</b>
       </p>

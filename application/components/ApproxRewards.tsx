@@ -33,10 +33,9 @@ export default function ApproxRewards({ miningContract }: Props) {
     (async () => {
       if (!address) return;
 
-      const p = (await miningContract.call(
-        "playerPickaxe",
-        address
-      )) as ContractMappingResponse;
+      const p = (await miningContract.call("playerPickaxe", [
+        address,
+      ])) as ContractMappingResponse;
 
       if (p.isData) {
         setMultiplier(p.value.toNumber() + 1);

@@ -25,7 +25,7 @@ export default function ShopItem({ item, pickaxeContract }: Props) {
       <ThirdwebNftMedia
         metadata={item.metadata}
         className={`${styles.nftMedia} ${styles.spacerTop}`}
-        height={"64"}
+        height="64"
       />
       <h3>{item.metadata.name}</h3>
       <p>
@@ -38,7 +38,7 @@ export default function ShopItem({ item, pickaxeContract }: Props) {
 
       <div className={styles.smallMargin}>
         <Web3Button
-          colorMode="dark"
+          theme="dark"
           contractAddress={PICKAXE_EDITION_ADDRESS}
           action={(contract) => contract.erc1155.claim(item.metadata.id, 1)}
           onSuccess={() => alert("Purchased!")}

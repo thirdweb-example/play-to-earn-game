@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import ContractMappingResponse from "../types/ContractMappingResponse";
 import GameplayAnimation from "./GameplayAnimation";
 import styles from "../styles/Home.module.css";
+import Image from "next/image";
 
 type Props = {
   miningContract: SmartContract<any>;
@@ -30,10 +31,9 @@ export default function CurrentGear({
     (async () => {
       if (!address) return;
 
-      const p = (await miningContract.call(
-        "playerPickaxe",
-        address
-      )) as ContractMappingResponse;
+      const p = (await miningContract.call("playerPickaxe", [
+        address,
+      ])) as ContractMappingResponse;
 
       // Now we have the tokenId of the equipped pickaxe, if there is one, fetch the metadata for it
       if (p.isData) {
@@ -82,7 +82,7 @@ export default function CurrentGear({
           marginTop: 24,
         }}
       >
-        <img src="./mine.gif" height={64} width={64} alt="character-mining" />
+        <Image src="/mine.gif" height={64} width={64} alt="character-mining" />
         <GameplayAnimation pickaxe={pickaxe} />
       </div>
     </div>
