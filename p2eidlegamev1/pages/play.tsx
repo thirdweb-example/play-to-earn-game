@@ -73,7 +73,7 @@ const activeChain = "polygon";
               Your Owned Properties
             </h2>
             <ThirdwebProvider
-      clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
+      
       activeChain={activeChain}
     >
       
