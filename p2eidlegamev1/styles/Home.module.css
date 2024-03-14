@@ -1,0 +1,600 @@
+.container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+.gradientText0 {
+  background: -webkit-linear-gradient(#bfa3da, #84309c, #c735b0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientText1 {
+  background: -webkit-linear-gradient(#a79af9, #7aa8d2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientText2 {
+  background: -webkit-linear-gradient(#bfa3da, #743f93);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradientText3 {
+  background: -webkit-linear-gradient(#c35ab1, #e9a8d9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  text-decoration: underline;
+  text-decoration-color: #84309c;
+}
+
+.title {
+  line-height: 1.15;
+  font-size: 4rem;
+}
+
+.title,
+.description {
+  text-align: left;
+}
+
+.connect {
+  margin-bottom: 2rem;
+}
+
+.description {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  font-size: 1.5rem;
+}
+
+.code {
+  background: #555;
+  border-radius: 5px;
+  padding: 0.5em;
+  font-size: 1.1rem;
+}
+
+.grid {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background-color: #131313;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  max-width: 440px;
+  overflow: none;
+  border: none;
+}
+
+.cardText {
+  padding: 1rem;
+}
+
+.card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px 4px 0 0;
+  margin-bottom: 12px;
+  border: none;
+}
+
+.card:hover,
+.card:focus,
+.card:active {
+  background-color: #272c34;
+  opacity: 80%;
+}
+
+.card h2 {
+  margin: 0 0 0.75rem 0;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.logo {
+  height: 1em;
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-left: 0;
+  }
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+  .title {
+    font-size: 3rem;
+    line-height: 1.15;
+  }
+}
+
+.card,
+.footer {
+  border-color: #222;
+}
+.logo img {
+  filter: invert(1);
+}
+.connect {
+  position: fixed;
+  top: 5%;
+  left: 5%;
+}
+
+.smallMargin {
+  margin: 4px;
+}
+
+.btn {
+  background-color: var(--tw-color1);
+  outline: none;
+  border: none;
+  color: var(--white);
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 999px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition: background-color 300ms ease-in-out;
+  transform-origin: center;
+}
+
+.btn:hover {
+  background-color: var(--tw-color1-hover);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.address {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.container {
+  margin-top: 96px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  padding: 0 24px;
+}
+
+.page {
+  width: inherit;
+  border-radius: 20px;
+  border: 1px solid var(--tw-color1);
+  padding: 16px;
+}
+
+.pageContainer {
+  max-width: 600px;
+  width: 90vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-direction: row;
+  gap: 2%;
+  padding: 1rem;
+}
+
+.arrowButton {
+  border-radius: 50%;
+  width: 30px;
+}
+
+.owner {
+  font-size: 1rem;
+}
+
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.header {
+  background-color: #262936;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 72px;
+  margin-bottom: 96px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.right {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  margin-right: 5%;
+}
+
+.secondaryButton {
+  cursor: pointer;
+  text-align: center;
+  padding: 5px;
+  color: #fff;
+  font-weight: 600;
+}
+
+.mainButton {
+  cursor: pointer;
+  display: inline-flex;
+  appearance: none;
+  align-items: center;
+  -webkit-box-align: center;
+  justify-content: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  line-height: 1.2;
+  font-weight: 600;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform;
+  transition-duration: 200ms;
+  height: 3rem;
+  min-width: 3rem;
+  font-size: 1rem;
+  background: #e5e5ea;
+  background-image: linear-gradient(to left, #cc25b3 0%, #418dff 101.52%);
+  color: #fff;
+  width: 180px;
+  text-align: center;
+  border-radius: 9999px;
+  border-style: none;
+}
+
+.mainButton:hover {
+  opacity: 0.8;
+}
+
+.ourCollection {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+}
+
+.collectionContainer {
+  width: 1200px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2%;
+}
+
+.h1 {
+  margin-bottom: 0px;
+}
+
+.explain {
+  font-size: 1.125rem;
+}
+
+.purple {
+  color: #9f2c9d;
+}
+
+.divider {
+  width: 50%;
+  border-color: grey;
+  opacity: 0.25;
+}
+
+.smallDivider {
+  width: 25%;
+  border-color: grey;
+  margin-top: 64px;
+  opacity: 0.25;
+}
+
+.textInput {
+  width: 75%;
+  background-color: transparent;
+  border: 1px solid grey;
+  border-radius: 8px;
+  color: #fff;
+  height: 48px;
+  padding: 0 16px;
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.imageInput {
+  width: 100%;
+  height: 100px;
+  border: 1px dashed grey;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: grey;
+  cursor: pointer;
+}
+
+.contractBoxGrid {
+  width: 1200px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1%;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.contractBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  width: 32%;
+  height: 200px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 16px;
+  padding-top: 25px;
+}
+
+/* Between 700px and 900px */
+@media screen and (min-width: 700px) and (max-width: 900px) {
+  .contractBoxGrid {
+    gap: 2%;
+  }
+
+  .contractBox {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 699px) {
+  .contractBoxGrid {
+    gap: 2%;
+  }
+
+  .contractBox {
+    width: 98%;
+  }
+}
+
+.nftBoxGrid {
+  width: 1200px;
+  max-width: 95vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+
+.nftBox {
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  width: 19%;
+  min-height: 200px;
+}
+
+@media only screen and (min-width: 800px) {
+  .nftBox {
+    width: 49%;
+    margin-top: 16px;
+  }
+}
+
+/* beneath 800
+*/
+@media only screen and (max-width: 800px) {
+  .nftBoxGrid {
+    justify-content: center;
+  }
+  .nftBox {
+    width: 90%;
+    margin-top: 16px;
+  }
+}
+
+.tokenGrid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1%;
+  width: 1200px;
+  max-width: 95vw;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.tokenItem {
+  width: 35%;
+  height: 120px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.tokenLabel {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: 600;
+}
+
+/* Second tokenLabel item */
+
+.tokenValue {
+  font-size: 1.3rem;
+  margin-top: 8px;
+  margin-bottom: 0px;
+  font-weight: 500;
+}
+
+/* On Mobile, make tokenGrid 100% width */
+@media only screen and (max-width: 850px) {
+  .tokenItem {
+    width: 90%;
+    margin-top: 12px;
+  }
+}
+
+/* Screen less than 630, then hide .center */
+@media only screen and (max-width: 630px) {
+  .center {
+    display: none;
+  }
+}
+
+.spacerTop {
+  margin-top: 16px;
+}
+
+.bigSpacerTop {
+  margin-top: 32px;
+}
+
+.spacerBottom {
+  margin-bottom: 16px;
+}
+
+.cardName {
+  margin-bottom: 0px;
+}
+
+.cardDescription {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.headerLogo {
+  width: 135px;
+  cursor: pointer;
+}
+
+.verticalSpacer {
+  color: grey;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.codeSnippet {
+  text-align: start;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  width: 900px;
+  max-width: 95vw;
+  background-color: #282c34;
+  overflow-x: auto;
+  font-size: 1rem;
+}
+
+.noUnderline {
+  text-decoration: none;
+}
+
+.detailPageContainer {
+  max-width: 800px;
+}
+
+.detailPageHr {
+  margin-top: 0px;
+  margin-bottom: 32px;
+}
+
+.lightPurple {
+  color: #e011a7;
+}
+
+.nftMedia {
+  width: 100%;
+  max-height: 300px;
+  border-radius: 15px;
+}
+
+.amountToClaim {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.noGapBottom {
+  margin-bottom: 0px;
+}
+
+.noGapTop {
+  margin-top: 0px;
+}
+
+.mainSection {
+  width: 100%;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* On mobile */
+@media screen and (max-width: 1000px) {
+  .mainSection {
+    flex-direction: column;
+  }
+}
