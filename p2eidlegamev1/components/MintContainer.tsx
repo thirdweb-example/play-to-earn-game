@@ -11,7 +11,7 @@ export default function MintContainer() {
       <p>Claim your Character NFT to start playing!</p>
 
       <div className={`${styles.nftBox} ${styles.spacerBottom}`}>
-        <Image src="/mine.gif" style={{ height: 200 }} alt="mine" />
+        <Image src="" style={{ height: 200 }} alt="mine" />
       </div>
 
       <div className={styles.smallMargin}>
