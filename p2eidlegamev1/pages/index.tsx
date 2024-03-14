@@ -60,7 +60,7 @@ const Home: NextPage = () => {
         className={`${styles.mainButton} ${styles.spacerBottom}`}
         onClick={() => router.push("/play")}
       >
-        Play Game
+        Play The Game
       </button>
     </div>
   );
