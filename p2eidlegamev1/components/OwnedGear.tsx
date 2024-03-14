@@ -58,7 +58,7 @@ export default function OwnedGear({ pickaxeContract, miningContract }: Props) {
             <ThirdwebNftMedia
               metadata={p.metadata}
               className={`${styles.nftMedia} ${styles.spacerTop}`}
-              height={"64"}
+              height={"25"}
             />
             <h3>{p.metadata.name}</h3>
 

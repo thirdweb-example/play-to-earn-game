@@ -82,7 +82,7 @@ export default function CurrentGear({
           marginTop: 24,
         }}
       >
-        <Image src="" height={64} width={64} alt="character-mining" />
+        <Image src="/public/mine.gif" height={20} width={20} alt="" />
         <GameplayAnimation pickaxe={pickaxe} />
       </div>
     </div>

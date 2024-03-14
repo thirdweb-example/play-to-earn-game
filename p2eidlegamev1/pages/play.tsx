@@ -96,7 +96,7 @@ import {
             <h2 className={`${styles.noGapTop} ${styles.noGapBottom}`}>Shop</h2>
             <div
               style={{
-                width: "100%",
+                width: "80%",
                 minHeight: "10rem",
                 display: "flex",
                 flexDirection: "row",

@@ -41,14 +41,14 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
       style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
     >
       <p>
-        Your <b>Gold Gems</b>
+        Your <b>Shadow Tokens</b>
       </p>
 
       {tokenMetadata ? (
         <ThirdwebNftMedia
           // @ts-ignore
           metadata={tokenMetadata}
-          height={"48"}
+          height={"15"}
         />
       ) : null}
       <p className={styles.noGapBottom}>
