@@ -4,7 +4,7 @@ import {
     useContract,
     useMetamask,
   } from "@thirdweb-dev/react";
-  import React from "react";
+  import React, { Component } from "react";
   import CurrentGear from "../components/CurrentGear";
   import LoadingSection from "../components/LoadingSection";
   import OwnedGear from "../components/OwnedGear";
@@ -17,6 +17,10 @@ import {
     PICKAXE_EDITION_ADDRESS,
   } from "../const/contractAddresses";
   import styles from "../styles/Home.module.css";
+  import type { AppProps } from "next/app";
+import { ThirdwebProvider } from "@thirdweb-dev/react";
+import "../styles/globals.css";
+const activeChain = "polygon";
   
   export default function Play() {
     const address = useAddress();
@@ -66,8 +70,14 @@ import {
         {pickaxeContract && miningContract ? (
           <>
             <h2 className={`${styles.noGapTop} ${styles.noGapBottom}`}>
-              Your Owned Pickaxes
+              Your Owned Properties
             </h2>
+            <ThirdwebProvider
+      clientId={process.env.NEXT_PUBLIC_TEMPLATE_CLIENT_ID}
+      activeChain={activeChain}
+    >
+      
+    </ThirdwebProvider>
             <div
               style={{
                 width: "100%",
