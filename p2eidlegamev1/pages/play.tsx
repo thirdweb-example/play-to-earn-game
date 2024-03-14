@@ -19,7 +19,7 @@ import {
   import styles from "../styles/Home.module.css";
   import type { AppProps } from "next/app";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
-import "../styles/globals.css";
+
 const activeChain = "polygon";
   
   export default function Play() {
