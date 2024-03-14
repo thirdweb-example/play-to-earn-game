@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const GoldGem = (
   <div className={styles.slide}>
-    <Image src="../public/gold-gem.png" height="10" width="10" alt="gold-gem" />
+    <Image src="" height="10" width="10" alt="gold-gem" />
   </div>
 );
 

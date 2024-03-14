@@ -8,10 +8,10 @@ export default function MintContainer() {
     <div className={styles.collectionContainer}>
       <h1>Mint Your Land</h1>
 
-      <p>You need a Land to build on.</p>
+      <p>You need a Land to Purchase Properties.</p>
 
       <div className={`${styles.nftBox} ${styles.spacerBottom}`}>
-        <Image src="/public/mine.gif" style={{ height: 200 }} alt="mine" />
+        <Image src="" style={{ height: 200 }} alt="mine" />
       </div>
 
       <div className={styles.smallMargin}>
@@ -20,7 +20,7 @@ export default function MintContainer() {
           contractAddress={CHARACTER_EDITION_ADDRESS}
           action={(contract) => contract.erc1155.claim(0, 1)}
         >
-          Claim
+          Purchase Land = 10 Matic
         </Web3Button>
       </div>
     </div>

@@ -66,7 +66,7 @@ export default function Rewards({ miningContract, tokenContract }: Props) {
           contractAddress={MINING_CONTRACT_ADDRESS}
           action={(contract) => contract.call("claim")}
         >
-          Claim
+          Claim Revenue
         </Web3Button>
       </div>
     </div>
