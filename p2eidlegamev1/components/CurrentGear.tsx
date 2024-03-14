@@ -55,7 +55,7 @@ export default function CurrentGear({
         }}
       >
         {/* Currently equipped player */}
-        <div style={{ outline: "1px solid grey", borderRadius: 16 }}>
+        <div style={{ outline: "1px solid grey", borderRadius: 5 }}>
           {playerNft && (
             <ThirdwebNftMedia metadata={playerNft?.metadata} height={"20"} />
           )}
@@ -73,18 +73,7 @@ export default function CurrentGear({
 
       {/* Gameplay Animation */}
 
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          marginTop: 24,
-        }}
-      >
-        <Image src="" height={20} width={20} alt="" />
-        <GameplayAnimation pickaxe={pickaxe} />
-      </div>
+      
     </div>
   );
 }
