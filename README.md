@@ -48,7 +48,7 @@ For example, when you buy the "Stone Hammer" (token ID `1`) for 10 GEMs, you wil
 You can create your own copy of this project by running the following command:
 
 ```bash
-npx thirdweb create --template play-to-earn
+npx thirdweb create --template play-to-earn-game
 ```
 
 Inside the [contractAddresses](./application/const/contractAddresses.ts) file, you can change the contract addresses to your own contracts.
